@@ -1,0 +1,50 @@
+<form class="form" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+  <h3>Sign Up</h3>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Username</label>
+    <input type="text" class="form-control" [ngClass]="{ 'is-invalid': submitted && signupForm.controls.UserName.errors }" formControlName="UserName" aria-describedby="emailHelp" placeholder="Enter username">
+    <div *ngIf="submitted && signupForm.controls.UserName.errors" class="invalid-feedback">
+      <div *ngIf="signupForm.controls.UserName.errors.required">*Username is required</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email Address</label>
+    <input type="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && signupForm.controls.EmailID.errors }" formControlName="EmailID" aria-describedby="emailHelp" placeholder="Enter email">
+    <div *ngIf="submitted && signupForm.controls.EmailID.errors !== null" class="invalid-feedback">
+      <div *ngIf="signupForm.controls.EmailID.errors.required">*EmailID is required</div>
+      <div *ngIf="signupForm.controls.EmailID.errors.email">*Invalid Format</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && signupForm.controls.Password.errors }" formControlName="Password" placeholder="Enter password">
+    <div *ngIf="submitted && signupForm.controls.Password.errors !== null" class="invalid-feedback">
+      <div *ngIf="signupForm.controls.Password.errors.required">*Password is required</div>
+      <div *ngIf="signupForm.controls.Password.errors.pattern">*Invalid password (Password minimum length is 8 and it must have at-least 1 special character, 1 number and 1 alphabet each.) </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">First Name</label>
+    <input type="text" class="form-control" formControlName="FirstName" [ngClass]="{ 'is-invalid': submitted && signupForm.controls.FirstName.errors }" placeholder="Enter your first name">
+    <div *ngIf="submitted && signupForm.controls.FirstName.errors !== null" class="invalid-feedback">
+      <div *ngIf="signupForm.controls.FirstName.errors.required">*First name is required</div>
+      <div *ngIf="signupForm.controls.FirstName.errors.pattern">*Invalid first name (Alphabets and spaces only)</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Last Name</label>
+    <input type="text" class="form-control" formControlName="LastName" [ngClass]="{ 'is-invalid': submitted && signupForm.controls.LastName.errors }" placeholder="Enter your last name">
+    <div *ngIf="submitted && signupForm.controls.LastName.errors !== null" class="invalid-feedback">
+      <div *ngIf="signupForm.controls.LastName.errors.required">*Last name is required</div>
+      <div *ngIf="signupForm.controls.LastName.errors.pattern">*Invalid last name (Alphabets and spaces only)</div>
+    </div>  
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">SELECT IMAGE : </label>
+    <input type="file" #FileInput id="image" (change)="onFileChange($event)">
+    <div *ngIf="submitted && userImage === null" class="bg-danger">
+      *No image selected
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

@@ -1,0 +1,20 @@
+<form class="form" [formGroup]="questionForm" (ngSubmit)="onSubmit()">
+  <h3>ASK QUESTION</h3>
+  <div class="form-group">
+    <input type="text" required class="form-control" formControlName="title" aria-describedby="articleTitle"
+      placeholder="Question Title">
+  </div>
+  <div class="form-group">
+    <input type="text" required class="form-control" formControlName="description" placeholder="What's this question about?">
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control" (keydown)="addTag($event)" formControlName="tag" placeholder="Enter a tag and press spacebar">
+  </div>
+  <div id="tags">
+      <span *ngFor="let tag of tags" class="badge badge-success">
+        <span class="cross" (click)="removeTag(tag)">x</span>
+        {{tag}}
+      </span>
+  </div>
+  <button type="submit" [disabled]="!questionForm.valid" class="btn btn-primary">Submit</button>
+</form>

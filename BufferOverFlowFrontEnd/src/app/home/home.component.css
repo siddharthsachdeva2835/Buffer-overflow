@@ -1,0 +1,17 @@
+form {
+    display: flex;
+}
+
+.add-btn {
+    height: 40px;
+    margin-top: 6px;
+}
+
+.searchform {
+    margin-top: 10px;
+    margin-left : 172px;
+}
+
+.page {
+    padding-left: 400px;
+}

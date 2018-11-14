@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row mt-4 border-dark box">
+    <div class="col-2">
+      <div class="row bg-dark answer-box">
+        <h1 class="col-12">{{question.answerCount}}</h1>
+        <h6 class="col-12">ANSWERS</h6>
+      </div>
+      <div *ngIf="!check" routerLink="/question/{{question.questionID}}" class="row btn btn-sm btn-success mybtn">VIEW QUESTION</div>
+    </div>
+    <div class="col-10 p-5">
+      <h4>{{question.title}}</h4>
+      <div *ngIf="!check">
+        Asked By: {{question.author.userName}}
+      </div>
+      <div *ngIf="check">
+        Description: {{question.description}}
+      </div>
+      <a *ngIf="self" class="btn btn-dark btn-sm m-1 edit" routerLink="/update/{{question.questionID}}">Edit</a>
+      <a *ngIf="self" class="btn btn-danger btn-sm m-1 remove" style="color: white;" (click)="deleteQuestion()" >Remove</a>
+    </div>
+  </div>
+</div>

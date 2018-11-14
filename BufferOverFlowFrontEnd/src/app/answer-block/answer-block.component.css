@@ -1,0 +1,15 @@
+.box {
+    height: 80px;
+    border: 1px solid;
+    border-radius: 4px;
+}
+
+.link {
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.backGrnd svg{
+    height: 30px;
+    width: 30px;
+}

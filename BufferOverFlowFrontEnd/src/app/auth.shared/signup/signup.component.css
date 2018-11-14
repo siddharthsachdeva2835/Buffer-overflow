@@ -1,0 +1,15 @@
+.form {
+    width: 400px;
+    margin: 50px auto;
+}
+h3 {
+    text-align: center;
+    margin: 40px;
+}
+
+button {
+    display: block;
+    margin: auto;
+    width: 100px;
+    margin-top: 30px; 
+}

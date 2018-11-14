@@ -1,0 +1,44 @@
+.box {
+    margin-left:100px;
+    margin-right: 100px; 
+    text-align: center;
+    height: 150px;
+    border: 1px solid;
+    border-radius: 4px;
+}
+
+.mybtn {
+    display: block;
+    width: 125px;
+    margin-left: 30px;
+    margin-top: -2px;
+    border-radius: 0;
+}
+.answer-box {
+    border-bottom-left-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+    text-align: center;
+    height: 80px;
+    margin-left: 30px;
+    width: 125px;
+    border: 1px solid;
+    border-radius: 6px;
+    margin-top: 25px;
+    color: aliceblue;
+}
+
+.edit {
+    border-bottom-right-radius: 0px !important;
+    border-top-right-radius: 0px !important;
+    position: relative;
+    left: 10px;
+}
+
+.remove {
+    border-bottom-left-radius: 0px !important;
+    border-top-left-radius: 0px !important;
+}
+
+h4 {
+    text-align: center;
+}

@@ -1,0 +1,8 @@
+form {
+    display: flex;
+}
+
+.add-btn {
+    height: 40px;
+    margin-top: 15px;
+}

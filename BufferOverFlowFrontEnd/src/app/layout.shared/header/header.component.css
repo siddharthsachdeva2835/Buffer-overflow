@@ -1,0 +1,18 @@
+.navbar-nav {
+    align-items: flex-end;
+}
+
+.navbar-brand {
+    color: #5CB85C;
+    font-weight: 700;
+}
+
+.navbar-brand:hover {
+    color: #5CB85C;
+    font-weight: 700;
+}
+
+.navbar-brand:enabled {
+    color: #5CB85C;
+    font-weight: 700;
+}

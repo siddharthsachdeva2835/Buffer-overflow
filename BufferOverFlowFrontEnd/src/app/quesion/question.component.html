@@ -1,0 +1,12 @@
+<app-question-block *ngIf="question"  [question]="question" [check]="check"></app-question-block>
+<div class="container" *ngIf="isAuth">
+  <form class="form" [formGroup]="addAnswerForm" (ngSubmit)="onSubmit()">
+    <div class="form-group w-75 p-2 m-2">
+      <input type="text" required class="form-control" formControlName="body" aria-describedby="emailHelp" placeholder="Type your answer">
+    </div>
+    <button type="submit" class="btn btn-primary add-btn">ADD ANSWER</button>
+  </form>
+</div>
+<div class="container">
+  <app-answer-block (delete)="deleteAnswer($event)" *ngFor="let answer of answers" [answer]="answer" class="container mr-5"></app-answer-block>
+</div>

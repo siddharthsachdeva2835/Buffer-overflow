@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+  <a class="navbar-brand" routerLink="home/global">Buffer Overflow</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+    <ul class="navbar-nav">
+      <li *ngIf="!isAuth" class="nav-item active">
+        <a class="nav-link" routerLink="auth/login">Login</a>
+      </li>
+      <li *ngIf="!isAuth" class="nav-item active">
+        <a class="nav-link" routerLink="auth/signup">Signup</a>
+      </li>
+      <li *ngIf="isAuth" class="nav-item active">
+        <img src="http://localhost:56137/{{user.imageURL}}" style="width: 40px;height: 40px;">
+      </li>
+      <li *ngIf="isAuth" class="nav-item active">
+        <a class="nav-link" routerLink="add-question">{{user.userName}}</a>
+      </li>
+      <li *ngIf="isAuth" class="nav-item active">
+        <a class="nav-link" routerLink="add-question">Ask Question</a>
+      </li>
+      <li *ngIf="isAuth" class="nav-item active">
+        <a class="nav-link" routerLink="profile/{{user.username}}">{{user.username}}</a>
+      </li>
+      <li *ngIf="isAuth" class="nav-item active">
+        <a class="nav-link" (click)="logout()">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
